@@ -10,7 +10,12 @@ class TestController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $this->view->assign('a','содержимое');
+    }
+
+    public function otherAction()
+    {
+        echo 22;
     }
 
 
