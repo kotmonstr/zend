@@ -21,6 +21,14 @@ class TestController extends Zend_Controller_Action
         $this->view->assign('result', 'create-ok');
     }
 
+    public function updateAction()
+    {
+        $register = new Application_Model_Register();
+        $register->updateUser(array('username' => 'usertest-new-new',
+                                    'email' => 'test-new'),43);
+        $this->view->assign('result', 'update-ok');
+    }
+
 
 }
 

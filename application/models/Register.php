@@ -8,6 +8,12 @@ class Application_Model_Register
     $dbTableUser->insert($array);
 
     }
+    public function updateUser($array,$id)
+    {
+    $dbTableUser = new Application_Model_DbTable_User();
+    $dbTableUser->update($array,"id=$id");
+
+    }
 
 }
 
