@@ -15,7 +15,7 @@ class IndexController extends Zend_Controller_Action
     }
     public function saveAction()
     {
-   
+   vd('save');
     }
 
 
