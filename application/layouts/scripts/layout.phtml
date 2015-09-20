@@ -1,12 +1,28 @@
+
+
+
+<?php echo $this->doctype() ?>
+<html>
+<head>
+    <?php echo $this->headTitle() ?>
+    <?php echo $this->headLink() ?>
+    <?php echo $this->headStyle() ?>
+    <?php echo $this->headScript() ?>
+</head>
+<body>
 <div class="header">
     Header
 </div>
 <hr>
 
-<?php echo $this->layout()->content; ?>
+<?php echo $this->layout()->content ?>
 
 <hr>
 <div class="footer">
     Footer
 </div>
+
+</body>
+</html>
+
 
