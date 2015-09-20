@@ -14,6 +14,14 @@ class Application_Model_Register
     $dbTableUser->update($array,"id=$id");
 
     }
+    public function fetchAll()
+    {
+        $dbTableUser = new Application_Model_DbTable_User();
+        $all = $dbTableUser->fetchAll();
+        $all = $dbTableUser->fetchAll();
+
+        return $all;
+    }
 
 }
 

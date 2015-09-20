@@ -28,6 +28,17 @@ class TestController extends Zend_Controller_Action
                                     'email' => 'test-new'),43);
         $this->view->assign('result', 'update-ok');
     }
+    public function getAction()
+    {
+
+
+        $register = new Application_Model_Register();
+        $sel = new Zend_Db_Select($register);
+        vd($sel);
+        $all = $register->fetchAll();
+        vd($all);die();
+
+    }
 
 
 }
