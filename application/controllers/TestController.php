@@ -31,12 +31,12 @@ class TestController extends Zend_Controller_Action
     public function getAction()
     {
 
-
         $register = new Application_Model_Register();
-        $sel = new Zend_Db_Select($register);
-        vd($sel);
-        $all = $register->fetchAll();
-        vd($all);die();
+        $a= new Zend_Db_Select($register);
+
+         $select = $register;
+         //$select = $register->fetchAll();
+        vd($select);
 
     }
 

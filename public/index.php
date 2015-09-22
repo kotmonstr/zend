@@ -1,6 +1,7 @@
 <?php
 function vd($arr){
     Zend_debug::dump($arr);
+    die('Stop by Kostya!');
 
 };
 // Define path to application directory
