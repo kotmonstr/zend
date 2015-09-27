@@ -22,6 +22,19 @@ class Application_Model_Register
 
         return $all;
     }
+    public function getUser()
+    {
+        $dbTableUser = new Application_Model_DbTable_User();
+        // Создаем объект Zend_Db_Select
+        $select = $this->select()
+            // Таблица из которой делается выборка
+            ->from($dbTableUser)
+
+        ;
+vd($select);
+
+
+    }
 
 }
 

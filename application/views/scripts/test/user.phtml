@@ -1,0 +1,16 @@
+
+        <?php
+        foreach ($this->user as $user) {
+            ?>
+
+            <div class="col-md-4 col-md-offset-4 well">
+                <?php
+                echo '<h4>' . "User Name: " . $user['username'] . '</h4>';
+                echo "User Id: " . $user['id'] . '<br>';
+                echo "User Email: " . $user['email'] . '<hr>';
+                ?>
+            </div>
+
+            <?
+        }
+        ?>

@@ -5,12 +5,13 @@ class TestController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+        $this->db = Zend_Db_Table::getDefaultAdapter();
+        $this->view->title = 'Test';
     }
 
     public function indexAction()
     {
-        $this->view->assign('a', 'ñîäåğæèìîå');
+        $this->view->assign('a', 'ÑĞ¾Ğ´ĞµÑ€Ğ¶Ğ¸Ğ¼Ğ¾Ğµ');
     }
 
     public function createAction()
@@ -28,18 +29,43 @@ class TestController extends Zend_Controller_Action
                                     'email' => 'test-new'),43);
         $this->view->assign('result', 'update-ok');
     }
+
     public function getAction()
     {
 
         $register = new Application_Model_Register();
-        $a= new Zend_Db_Select($register);
 
-         $select = $register;
-         //$select = $register->fetchAll();
+         $select = $register->getUser();
         vd($select);
 
     }
 
+    public function userAction()
+    {
+
+        $user = $this->db->query('SELECT * FROM USER ORDER BY id DESC ')->fetchAll();
+        $this->view->user = $user;
+
+    }
+
+    public function useraddAction()
+    {
+
+
+
+    }
+
+    public function addAction()
+    {
+        $data=array();
+        $data['email']= $this->_getParam('email',0);
+        $data['username']= $this->_getParam('username',0);
+        $this->db->insert('user',$data);
+        $this->redirect('/test/user');
+    }
+
 
 }
+
+
 

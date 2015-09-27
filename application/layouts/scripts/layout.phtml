@@ -1,24 +1,23 @@
 
-
-
-<?php echo $this->doctype() ?>
+<?=$this->doctype('HTML5');?>
 <html>
+
+<?php  $this->headTitle('Zend') ?>
 <head>
     <?php echo $this->headTitle() ?>
-    <?php echo $this->headLink() ?>
-    <?php echo $this->headStyle() ?>
-    <?php echo $this->headScript() ?>
+
+    <?= $this->headLink()->appendStylesheet('/bootstrap/css/bootstrap.min.css') ?>
+    <?= $this->headLink()->appendStylesheet('/bootstrap/css/bootstrap-theme.min.css') ?>
 
 
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+
     <script src="/bootstrap/js/jquery.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-<div class="header">
-    <nav class="navbar navbar-default">
+<div class="header well-sm">
+    <nav class="navbar navbar-default alert alert-success">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -35,7 +34,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li><a href="/index/index">Home</a></li>
+                    <li><a href="/index/index">Главная</a></li>
+                    <li><a href="/test/user">Пользователи</a></li>
+                    <li><a href="/test/useradd">Добавить пользователя</a></li>
                     <li><a href="/test/index">test/index</a></li>
                     <li><a href="/test/create">Create</a></li>
                     <li><a href="/test/update">Update</a></li>
@@ -48,16 +49,30 @@
         </div><!-- /.container-fluid -->
     </nav>
 </div>
-<hr>
+
+    <div class="container-fluid">
 
 <?php echo $this->layout()->content ?>
+    </div>
 
-<hr>
-<div class="footer">
+
+<div class="footer well-sm">
+    <nav class="navbar navbar-default alert alert-success footer-div">
     Footer
+</div>
 </div>
 
 </body>
 </html>
+<style>
+    .footer{
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
 
+    }
+    .footer-div{
+        margin-bottom: 0px!important;
+    }
+</style>
 
