@@ -25,13 +25,10 @@ class Application_Model_Register
     public function getUser()
     {
         $dbTableUser = new Application_Model_DbTable_User();
-        // Создаем объект Zend_Db_Select
-        $select = $this->select()
-            // Таблица из которой делается выборка
-            ->from($dbTableUser)
+        $a = $this->self->select('id')->where('id == 33')->order('id ASC');
+        $a->fetchAll()->toArray();
+        vd($a);
 
-        ;
-vd($select);
 
 
     }

@@ -1,5 +1,7 @@
+<?php $activeMenu =  $this->placeholder('menu'); ?>
+<?php echo $this->action('list','test',null,array('count' => 10)); ?>
 
-<?=$this->doctype('HTML5');?>
+<?php echo $this->doctype() ?>
 <html>
 
 <?php  $this->headTitle('Zend') ?>
@@ -34,13 +36,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li><a href="/index/index">Главная</a></li>
-                    <li><a href="/test/user">Пользователи</a></li>
-                    <li><a href="/test/useradd">Добавить пользователя</a></li>
-                    <li><a href="/test/index">test/index</a></li>
+                    <li class='<?= $activeMenu == '1' ? "active" : '' ?>'><a href="/index/index">Главная</a></li>
+                    <li class='<?= $activeMenu == '2' ? "active" : '' ?>'><a href="/test/user">Пользователи</a></li>
+                    <li class='<?= $activeMenu == '3' ? "active" : '' ?>'><a href="/test/useradd">Добавить пользователя</a></li>
+                    <li class='<?= $activeMenu == '4' ? "active" : '' ?>'><a href="/test/index">test/index</a></li>
                     <li><a href="/test/create">Create</a></li>
                     <li><a href="/test/update">Update</a></li>
                     <li><a href="/test/get">Get</a></li>
+                    <li><a href="/patch/index">Patch</a></li>
+                    <li><a href="<?= $this->url(array('controller'=>'test','action'=>'index')); ?>">тЕСТОВАЯ ССЫЛКА</a></li>
+                    <li><a href="<?= $this->url(array('controller'=>'auth','action'=>'login')); ?>">Регистрация</a></li>
 
                 </ul>
 

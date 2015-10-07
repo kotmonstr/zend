@@ -36,7 +36,7 @@ class TestController extends Zend_Controller_Action
         $register = new Application_Model_Register();
 
          $select = $register->getUser();
-        vd($select);
+
 
     }
 
@@ -62,6 +62,15 @@ class TestController extends Zend_Controller_Action
         $data['username']= $this->_getParam('username',0);
         $this->db->insert('user',$data);
         $this->redirect('/test/user');
+    }
+    public function listAction(){
+        return "ListAction";
+
+    }
+
+    public function loginAction(){
+
+
     }
 
 
